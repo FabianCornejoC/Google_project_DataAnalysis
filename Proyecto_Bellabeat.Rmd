@@ -2,7 +2,7 @@
 title: "Bellabeat, Analysis Data Proyect"
 author: "Fabián Cornejo, Data analyst"
 date: "2024-04-03"
-output: html_document
+output: github_document
 ---
 
 ```{r setup, include=FALSE}
