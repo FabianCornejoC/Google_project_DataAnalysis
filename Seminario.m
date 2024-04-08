@@ -1,4 +1,4 @@
-
+%% authors: Dario Peréz; alumnos; Fabián Cornejo
 load('C:\Yop\Seminario\Threshold_2048_(current)\C2048_V1725dT30_coh.mat'); %reemplazar nombre en a
 
 a =  'var_dataV1725dT30_incoh'; %cambiar el nombre al cambiar el archivo
