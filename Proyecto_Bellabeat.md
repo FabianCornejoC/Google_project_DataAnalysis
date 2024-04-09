@@ -41,6 +41,13 @@ vendidos por Bellabeat.
 
 ## Cleaning and Processing Data
 
+Los datos son ofrecidos por Amazon. Estan ubicados y son extraídos de
+kaggle ‘FitBit Fitness Tracker Data’, expuestos por usuarios de muy alta
+visualización comunitaria de la plataforma, *‘Möbius’*. Por lo que son
+datos integros, si es cierto que hay problema en la credibilidad de los
+datos, donde no siempre mencionan las unidad de medida, en el cual para
+este caso fueron descartados dichos datos.
+
 Los archivos correspondientes en el proceso son
 
 - **DailyActivity_merged**: Diferentes tipos de datos relacionados a los
@@ -52,6 +59,14 @@ Los archivos correspondientes en el proceso son
   liviana, moderada e intensa. También las horas de sedentarismo.
 - **SleepDay**: Minutos de sueño y cama de cada usuario por día.
 - **Hourly_Intensities**: Actividad por hora.
+
+Todos estos datos nos ayudaran a encontrar relaciones en sus diferentes
+factores que nos permitiran entender la salud, beniestar y actividad de
+los usarios de Bellabeat.
+
+Además utilizamos lubridate y tidyverse para hacer el proceso de
+analisis, bibliotecas aptas para manipular dataframes; como columnas,
+nombres, filas, cambiar unidades, fechas, etc.
 
 Importamos librerias
 
@@ -199,14 +214,15 @@ intensidad_diaria <- intensidad_diaria %>%
 intensidad_diaria$ActivityDay <- mdy(intensidad_diaria$ActivityDay)
 ```
 
-Al cambiar el tipo de dato de caracter a fecha, lubridate da error para
-las 00:00 Horas, por lo tanto da resultado NA, por eso veremos un error
-en el codigo, también es la razón de cambiar todo NA a 00:00:00 para que
-más adelante sea legible este caracter por la libreria.
+hay problemas con la fecha, pero no es preocupación. Es error interno de
+libreria que convierte nuestras 00am en NAs, es por aquello que cambio
+cada NA en columna hora, a 00:00:00 para que así luego la libreria sea
+capaz de reconocer el formato *DATE*. Es decir, no hay problema con la
+integridad de los datos, solo un pequeño percanse.
 
 ``` r
 # hourlyintensities
-intensidad_hora1 <- read.csv('C:\\Yop\\Analisis_de_datos\\Fitabase_Data_1\\hourlyIntensities_merged.csv')
+intensidad_hora1 <- read.csv('C:\\Yop\\Analisis_de_datos\\Fitabase_Data_1\\hourlyIntensities_merged_1.csv')
 intensidad_hora2 <- read.csv('C:\\Yop\\Analisis_de_datos\\Fitabase_Data_2\\hourlyIntensities_merged.csv')
 
 intensidad_hora1$ActivityHour =  mdy_hms(intensidad_hora1$ActivityHour, quiet = TRUE)
@@ -411,6 +427,10 @@ summary(Intensidad_diaria)
     ##  Mean   :0.2261   Mean   :0.35275  
     ##  3rd Qu.:0.3167   3rd Qu.:0.53333  
     ##  Max.   :2.3833   Max.   :3.50000
+
+Con las librerias pudimos seleccionar todo lo necesario y organizarla de
+manera optima para nuestro analisis, formateamos el tipo de datos a los
+necesarios/debidos, que para este caso practico fueron las fechas.
 
 #### Interesting Data
 
