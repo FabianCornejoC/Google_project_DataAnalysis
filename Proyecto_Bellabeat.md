@@ -1,4 +1,4 @@
-Bellabeat, Analysis Data Proyect
+Bellabeat, Analysis Data Project
 ================
 Fabián Cornejo, Data analyst
 2024-04-03
