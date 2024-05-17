@@ -1,2 +1,4 @@
- Proyecto_Bellabeat: Limpieza, proceso, análisis, vizualización, consejos y recomendaciones para la empresa Bellabeat, a través de datos publicos de Kaggle. 
+Analysis of data for Bellbeat, the company its about smart technological objects. I realyze processing, cleaning, anlysis, visualization and recomendations for they. 
+
+This project is in R, for the Google course
 
